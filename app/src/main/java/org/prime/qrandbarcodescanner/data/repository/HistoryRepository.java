@@ -1,27 +1,27 @@
-package org.prime.qrandbarcodescanner.repository;
+package org.prime.qrandbarcodescanner.data.repository;
 
 import android.content.Context;
 
 import androidx.lifecycle.LiveData;
 
-import org.prime.qrandbarcodescanner.dao.HistoryDao;
-import org.prime.qrandbarcodescanner.database.HistoryDatabase;
-import org.prime.qrandbarcodescanner.model.History;
+import org.prime.qrandbarcodescanner.data.database.HistoryDao;
+import org.prime.qrandbarcodescanner.data.database.HistoryDatabase;
+import org.prime.qrandbarcodescanner.data.model.HistoryModel;
 
 import java.util.List;
 
-public class Repository {
+public class HistoryRepository {
     public HistoryDao historyDao;
-    public LiveData<List<History>> getAllHistory;
+    public LiveData<List<HistoryModel>> getAllHistory;
 
-    public Repository(Context context) {
+    public HistoryRepository(Context context) {
         HistoryDatabase database = HistoryDatabase.getDatabaseInstance(context);
         historyDao = database.historyDao();
         getAllHistory = historyDao.getAllHistory();
 
     }
 
-    public void insertHistory(History history) {
+    public void insertHistory(HistoryModel history) {
         historyDao.insertNotes(history);
 
     }
@@ -31,7 +31,7 @@ public class Repository {
 
     }
 
-    public void updateHistory(History history) {
+    public void updateHistory(HistoryModel history) {
         historyDao.updateNotes(history);
 
     }

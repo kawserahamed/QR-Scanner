@@ -1,4 +1,4 @@
-package org.prime.qrandbarcodescanner.recyclerview;
+package org.prime.qrandbarcodescanner.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,16 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.prime.qrandbarcodescanner.R;
-import org.prime.qrandbarcodescanner.model.History;
+import org.prime.qrandbarcodescanner.data.model.HistoryModel;
 
 import java.util.List;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.historyViewHolder> {
 
     Context context;
-    List<History> historyList;
+    List<HistoryModel> historyList;
 
-    public HistoryAdapter(Context context, List<History> historyList) {
+    public HistoryAdapter(Context context, List<HistoryModel> historyList) {
         this.context = context;
         this.historyList = historyList;
     }
@@ -34,7 +34,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.historyV
     @Override
     public void onBindViewHolder(@NonNull historyViewHolder holder, int position) {
 
-        History history = historyList.get(position);
+        HistoryModel history = historyList.get(position);
         holder.url.setText(history.url);
         holder.date.setText(history.date);
     }
