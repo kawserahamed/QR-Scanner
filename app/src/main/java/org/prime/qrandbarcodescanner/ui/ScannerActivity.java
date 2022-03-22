@@ -1,10 +1,9 @@
-package org.prime.qrandbarcodescanner.activity;
+package org.prime.qrandbarcodescanner.ui;
 
 import android.Manifest;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -17,7 +16,7 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
-import org.prime.qrandbarcodescanner.model.History;
+import org.prime.qrandbarcodescanner.data.model.HistoryModel;
 import org.prime.qrandbarcodescanner.viewModel.HistoryViewModel;
 
 import java.text.SimpleDateFormat;
@@ -37,6 +36,7 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         scannerView = new ZXingScannerView(this);
+
         setContentView(scannerView);
 
 
@@ -74,9 +74,7 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
     }
 
     private void createHistory(String textUrl, String strDate) {
-        History history = new History();
-        history.url = textUrl;
-        history.date = strDate;
+        HistoryModel history = new HistoryModel(textUrl, strDate);
         historyViewModel.insert(history);
 
     }

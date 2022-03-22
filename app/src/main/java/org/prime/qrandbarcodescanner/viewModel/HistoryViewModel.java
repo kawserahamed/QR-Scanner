@@ -6,30 +6,30 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import org.prime.qrandbarcodescanner.model.History;
-import org.prime.qrandbarcodescanner.repository.Repository;
+import org.prime.qrandbarcodescanner.data.model.HistoryModel;
+import org.prime.qrandbarcodescanner.data.repository.HistoryRepository;
 
 import java.util.List;
 
 public class HistoryViewModel extends AndroidViewModel {
-    public Repository repository;
-    public LiveData<List<History>> getAllHistory;
+    public HistoryRepository repository;
+    public LiveData<List<HistoryModel>> getAllHistory;
 
 
     public HistoryViewModel(@NonNull Application application) {
         super(application);
 
-        repository = new Repository(application);
+        repository = new HistoryRepository(application);
         getAllHistory = repository.getAllHistory;
     }
 
-    public void insert(History history){
+    public void insert(HistoryModel history){
         repository.insertHistory(history);
     }
     public void delete(int id){
         repository.deleteHistory(id);
     }
-    public void update(History history){
+    public void update(HistoryModel history){
         repository.insertHistory(history);
     }
 }

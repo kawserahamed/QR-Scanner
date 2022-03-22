@@ -1,4 +1,4 @@
-package org.prime.qrandbarcodescanner.dao;
+package org.prime.qrandbarcodescanner.data.database;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -6,22 +6,22 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import org.prime.qrandbarcodescanner.model.History;
+import org.prime.qrandbarcodescanner.data.model.HistoryModel;
 
 import java.util.List;
 
 @Dao
 public interface HistoryDao {
     @Query("SELECT * FROM History_database")
-    LiveData<List<History>> getAllHistory();
+    LiveData<List<HistoryModel>> getAllHistory();
 
     @Insert
-    void insertNotes(History... history);
+    void insertNotes(HistoryModel... history);
 
     @Query("DELETE FROM History_database WHERE id=:id")
     void deleteNotes(int id);
 
     @Update
-    void updateNotes(History history);
+    void updateNotes(HistoryModel history);
 
 }
