@@ -29,9 +29,9 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
 
     ZXingScannerView scannerView;
     HistoryViewModel historyViewModel;
-    Calendar c = Calendar.getInstance();
+    Calendar calendar = Calendar.getInstance();
     SimpleDateFormat sdf = new SimpleDateFormat("dd-MMMM-yyyy");
-    String date = sdf.format(c.getTime()).toString();
+    String date = sdf.format(calendar.getTime()).toString();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +78,6 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
         history.url = textUrl;
         history.date = strDate;
         historyViewModel.insert(history);
-        Toast.makeText(this, "Added on offline", Toast.LENGTH_SHORT).show();
 
     }
 
