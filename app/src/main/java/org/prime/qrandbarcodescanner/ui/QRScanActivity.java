@@ -24,7 +24,7 @@ import java.util.Calendar;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
-public class ScannerActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
+public class QRScanActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
     ZXingScannerView scannerView;
     HistoryViewModel historyViewModel;

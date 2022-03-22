@@ -35,8 +35,10 @@ public class MainActivity extends AppCompatActivity {
         binding.btScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, ScannerActivity.class));
+                startActivity(new Intent(MainActivity.this, QRScanActivity.class));
             }
         });
+
+
     }
 }
