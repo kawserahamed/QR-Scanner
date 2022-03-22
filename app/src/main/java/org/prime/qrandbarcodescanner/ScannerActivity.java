@@ -1,6 +1,8 @@
 package org.prime.qrandbarcodescanner;
 
 import android.Manifest;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +26,6 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
         super.onCreate(savedInstanceState);
         scannerView = new ZXingScannerView(this);
         setContentView(scannerView);
-
         Dexter.withContext(getApplicationContext())
                 .withPermission(Manifest.permission.CAMERA)
                 .withListener(new PermissionListener() {
@@ -49,8 +50,9 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
 
     @Override
     public void handleResult(Result result) {
-        MainActivity.textView.setText(result.getText());
-        onBackPressed();
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(result.getText()));
+        startActivity(intent);
     }
 
     @Override
