@@ -48,4 +48,14 @@ dependencies {
     }
     //For Runtime Permission
     implementation 'com.karumi:dexter:6.2.2'
+
+
+    //Room Database
+    implementation "androidx.room:room-runtime:2.4.2"
+    annotationProcessor "androidx.room:room-compiler:2.4.2"
+
+    // Android Architecture Components
+    def lifecycle_version = "2.4.0"
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
 }

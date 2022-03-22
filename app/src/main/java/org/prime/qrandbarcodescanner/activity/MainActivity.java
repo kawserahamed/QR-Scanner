@@ -1,4 +1,4 @@
-package org.prime.qrandbarcodescanner;
+package org.prime.qrandbarcodescanner.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,11 +16,11 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.scanButton.setOnClickListener(view -> {
+      /*  binding.scanButton.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), ScannerActivity.class);
             startActivity(intent);
 
         });
-
+*/
     }
 }
