@@ -43,7 +43,7 @@ dependencies {
     //For QR and Bar Scanner
     //implementation 'me.dm7.barcodescanner:zbar:1.9'
 
-    implementation ("me.dm7.barcodescanner:zxing:1.9.8") {
+    implementation ("me.dm7.barcodescanner:zxing:1.9") {
         exclude group: "com.android.support"
     }
     //For Runtime Permission

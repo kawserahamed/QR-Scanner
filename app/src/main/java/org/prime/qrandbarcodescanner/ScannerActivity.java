@@ -47,7 +47,6 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
 
     }
 
-
     @Override
     public void handleResult(Result result) {
         MainActivity.textView.setText(result.getText());
