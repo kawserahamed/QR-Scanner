@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -64,9 +65,10 @@ public class QRScanActivity extends AppCompatActivity implements ZXingScannerVie
 
     @Override
     public void handleResult(Result result) {
+        Toast.makeText(this, "" + result.getBarcodeFormat().name(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(result.getText()));
-        startActivity(intent);
+        // startActivity(intent);
         String textUrl = result.getText();
         String strDate = date;
         createHistory(textUrl, strDate);

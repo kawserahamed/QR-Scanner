@@ -26,8 +26,8 @@ public class HistoryRepository {
 
     }
 
-    public void deleteHistory(int id) {
-        historyDao.deleteNotes(id);
+    public void deleteHistory(HistoryModel historyModel) {
+        historyDao.deleteNotes(historyModel);
 
     }
 
