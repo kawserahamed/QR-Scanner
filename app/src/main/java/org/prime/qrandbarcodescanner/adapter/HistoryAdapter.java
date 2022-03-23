@@ -30,6 +30,8 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.historyV
         this.historyList = historyList;
     }
 
+    public HistoryAdapter() {
+    }
 
     @NonNull
     @Override
@@ -58,7 +60,6 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.historyV
                     .setCancelable(false)
                     .setPositiveButton(R.string.yes, (dialog, id) -> historyViewModel.delete(history.id))
                     .setNegativeButton(R.string.no, (dialog, id) -> {
-                        //  Action for 'NO' Button
                         dialog.cancel();
                     });
             AlertDialog alert = builder.create();

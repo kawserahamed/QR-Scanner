@@ -41,18 +41,12 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //For QR and Bar Scanner
-    //implementation 'me.dm7.barcodescanner:zbar:1.9'
-
     implementation ("me.dm7.barcodescanner:zxing:1.9") {
         exclude group: "com.android.support"
     }
 
-    implementation ("me.dm7.barcodescanner:zxing:zbar:1.9") {
-        exclude group: "com.android.support"
-    }
     //For Runtime Permission
     implementation 'com.karumi:dexter:6.2.2'
-
 
     //Room Database
     implementation "androidx.room:room-runtime:2.4.2"
