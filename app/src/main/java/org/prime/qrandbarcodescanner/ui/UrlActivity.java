@@ -14,7 +14,7 @@ import org.prime.qrandbarcodescanner.R;
 
 public class UrlActivity extends AppCompatActivity {
 
-    public static TextView urlTextView;
+    public TextView urlTextView;
     Button copyButton;
     ClipboardManager clipboard;
     ClipData myClip;
@@ -27,7 +27,7 @@ public class UrlActivity extends AppCompatActivity {
         urlTextView = findViewById(R.id.textUrlView);
         copyButton = findViewById(R.id.copyButton);
         clipboard = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
-
+        urlTextView.setText(getIntent().getStringExtra("url")); ;
 
         copyButton.setOnClickListener(view -> {
             String text = urlTextView.getText().toString();

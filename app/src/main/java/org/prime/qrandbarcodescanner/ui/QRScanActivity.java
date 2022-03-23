@@ -3,8 +3,10 @@ package org.prime.qrandbarcodescanner.ui;
 import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+
 import com.google.zxing.Result;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
@@ -12,11 +14,14 @@ import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
+
 import org.prime.qrandbarcodescanner.data.model.HistoryModel;
 import org.prime.qrandbarcodescanner.viewModel.HistoryViewModel;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
+
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class QRScanActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
@@ -58,17 +63,17 @@ public class QRScanActivity extends AppCompatActivity implements ZXingScannerVie
 
     @Override
     public void handleResult(Result result) {
-        Intent intent = new Intent(getApplicationContext(),UrlActivity.class);
-        UrlActivity.urlTextView.setText(result.getText());
+        Intent intent = new Intent(getApplicationContext(), UrlActivity.class);
+        intent.putExtra("url", result.getText());
         startActivity(intent);
-        String codeType= result.getBarcodeFormat().toString();
+        String codeType = result.getBarcodeFormat().toString();
         String textUrl = result.getText();
         String strDate = date;
-        createHistory(textUrl, strDate,codeType);
+        createHistory(textUrl, strDate, codeType);
     }
 
     private void createHistory(String textUrl, String strDate, String codeType) {
-        HistoryModel history = new HistoryModel(textUrl, strDate,codeType);
+        HistoryModel history = new HistoryModel(textUrl, strDate, codeType);
         historyViewModel.insert(history);
     }
 
