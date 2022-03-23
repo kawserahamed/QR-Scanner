@@ -1,11 +1,14 @@
 package org.prime.qrandbarcodescanner.ui;
+
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
+
 import org.prime.qrandbarcodescanner.R;
 import org.prime.qrandbarcodescanner.adapter.HistoryAdapter;
 import org.prime.qrandbarcodescanner.data.model.HistoryModel;
