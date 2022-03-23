@@ -39,6 +39,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="20dp"
             android:text="@string/https_www_youtube_com"
+            android:autoLink="all"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/layout"
