@@ -23,8 +23,6 @@ public abstract class HistoryDatabase extends RoomDatabase {
                     .build();
 
         }
-
         return INSTANCE;
     }
-
 }

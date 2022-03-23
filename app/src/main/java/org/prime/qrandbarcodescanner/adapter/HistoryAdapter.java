@@ -6,14 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import org.prime.qrandbarcodescanner.R;
 import org.prime.qrandbarcodescanner.data.model.HistoryModel;
 import org.prime.qrandbarcodescanner.lesteners.HistoryLesteners;
-
 import java.util.List;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.historyViewHolder> {
@@ -48,14 +45,8 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.historyV
             holder.codeType.setImageResource(R.drawable.barcode);
         }
 
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                historyLesteners.onHistoryClicked(history, holder.getAdapterPosition());
-            }
-        });
-
+        holder.itemView.setOnClickListener(view ->
+                historyLesteners.onHistoryClicked(history, holder.getAdapterPosition()));
 
         holder.deleteButton.setOnClickListener(view -> historyLesteners
                 .onDeleteClicked(history, holder.getAdapterPosition()));

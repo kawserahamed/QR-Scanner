@@ -1,16 +1,11 @@
 package org.prime.qrandbarcodescanner.ui;
-
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
 import org.prime.qrandbarcodescanner.R;
 import org.prime.qrandbarcodescanner.adapter.HistoryAdapter;
 import org.prime.qrandbarcodescanner.data.model.HistoryModel;
@@ -45,12 +40,12 @@ public class MainActivity extends AppCompatActivity implements HistoryLesteners 
 
     @Override
     public void onHistoryClicked(HistoryModel historyModel, int historyClickedPosition) {
-
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(historyModel.url));
         startActivity(intent);
 
     }
+
 
     @Override
     public void onDeleteClicked(HistoryModel historyModel, int position) {

@@ -18,18 +18,19 @@ public class HistoryViewModel extends AndroidViewModel {
 
     public HistoryViewModel(@NonNull Application application) {
         super(application);
-
         repository = new HistoryRepository(application);
         getAllHistory = repository.getAllHistory;
     }
 
-    public void insert(HistoryModel history){
+    public void insert(HistoryModel history) {
         repository.insertHistory(history);
     }
-    public void delete(HistoryModel historyModel){
+
+    public void delete(HistoryModel historyModel) {
         repository.deleteHistory(historyModel);
     }
-    public void update(HistoryModel history){
+
+    public void update(HistoryModel history) {
         repository.insertHistory(history);
     }
 }
