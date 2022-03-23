@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/drawable/button_background.xml" value="0.1305" />
+        <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/drawable/url_background.xml" value="0.1305" />
         <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/layout/activity_bar.xml" value="0.209375" />
         <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/layout/activity_bar_scan.xml" value="0.209375" />
         <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/layout/activity_scanner.xml" value="0.209375" />
-        <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/layout/item_history.xml" value="0.25" />
+        <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/layout/activity_url.xml" value="0.209375" />
+        <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/layout/item_history.xml" value="0.39814814814814814" />
       </map>
     </option>
   </component>

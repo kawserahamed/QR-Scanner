@@ -18,12 +18,21 @@ public class HistoryModel {
     @ColumnInfo(name = "history_date")
     public String date;
 
-    public HistoryModel() {
-    }
+    @ColumnInfo(name = "history_type")
+    public String type;
 
-    public HistoryModel(String url, String date) {
+    public HistoryModel(String url, String date, String type) {
         this.url = url;
         this.date = date;
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public int getId() {

@@ -42,10 +42,23 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.historyV
         HistoryModel history = historyList.get(position);
         holder.url.setText(history.url);
         holder.date.setText(history.date);
+        if (history.type.equals("QR_CODE")){
+            holder.codeType.setImageResource(R.drawable.qrcode);
+        }else {
+            holder.codeType.setImageResource(R.drawable.barcode);
+        }
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                historyLesteners.onHistoryClicked(history, holder.getAdapterPosition());
+            }
+        });
 
 
         holder.deleteButton.setOnClickListener(view -> historyLesteners
-                .onHistoryClicked(history, holder.getAdapterPosition()));
+                .onDeleteClicked(history, holder.getAdapterPosition()));
     }
 
     @Override
@@ -57,12 +70,14 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.historyV
         TextView url;
         TextView date;
         ImageView deleteButton;
+        ImageView codeType;
 
         public historyViewHolder(@NonNull View itemView) {
             super(itemView);
             url = itemView.findViewById(R.id.textUrl);
             date = itemView.findViewById(R.id.textDate);
             deleteButton = itemView.findViewById(R.id.deleteButton);
+            codeType = itemView.findViewById(R.id.codeType);
 
         }
     }

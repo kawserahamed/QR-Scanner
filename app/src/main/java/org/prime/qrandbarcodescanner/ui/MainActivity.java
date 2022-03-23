@@ -46,20 +46,27 @@ public class MainActivity extends AppCompatActivity implements HistoryLesteners 
     @Override
     public void onHistoryClicked(HistoryModel historyModel, int historyClickedPosition) {
 
-        new AlertDialog.Builder(this)
-                .setTitle("Delete item")
-                .setMessage("Are you sure you want to delete?")
-                .setPositiveButton(
-                        "OK"
-                        , new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                historyViewModel.delete(historyModel);
-                                adapter.notifyDataSetChanged();
-                            }
-                        })
-                .setNegativeButton(
-                        "CANCEL", null).show();
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(historyModel.url));
+        startActivity(intent);
 
     }
+
+    @Override
+    public void onDeleteClicked(HistoryModel historyModel, int position) {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.delete)
+                .setMessage(R.string.are_you_sure)
+                .setPositiveButton(
+                        R.string.yes
+                        , (dialogInterface, i) -> {
+                            historyViewModel.delete(historyModel);
+                            adapter.notifyDataSetChanged();
+                        })
+                .setNegativeButton(
+                        R.string.no, null).show();
+
+    }
+
+
 }

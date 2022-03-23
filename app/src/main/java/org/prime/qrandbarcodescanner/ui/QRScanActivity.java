@@ -2,13 +2,9 @@ package org.prime.qrandbarcodescanner.ui;
 
 import android.Manifest;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
-
 import com.google.zxing.Result;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
@@ -16,13 +12,11 @@ import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
-
 import org.prime.qrandbarcodescanner.data.model.HistoryModel;
 import org.prime.qrandbarcodescanner.viewModel.HistoryViewModel;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
+import java.util.Locale;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class QRScanActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
@@ -30,7 +24,7 @@ public class QRScanActivity extends AppCompatActivity implements ZXingScannerVie
     ZXingScannerView scannerView;
     HistoryViewModel historyViewModel;
     Calendar calendar = Calendar.getInstance();
-    SimpleDateFormat sdf = new SimpleDateFormat("dd-MMMM-yyyy");
+    SimpleDateFormat sdf = new SimpleDateFormat("dd-MMMM-yyyy", Locale.getDefault());
     String date = sdf.format(calendar.getTime());
 
     @Override
@@ -56,7 +50,6 @@ public class QRScanActivity extends AppCompatActivity implements ZXingScannerVie
 
                     @Override
                     public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
-
                         permissionToken.continuePermissionRequest();
                     }
                 }).check();
@@ -65,20 +58,20 @@ public class QRScanActivity extends AppCompatActivity implements ZXingScannerVie
 
     @Override
     public void handleResult(Result result) {
-        Toast.makeText(this, "" + result.getBarcodeFormat().name(), Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(result.getText()));
-        // startActivity(intent);
+        Intent intent = new Intent(getApplicationContext(),UrlActivity.class);
+        UrlActivity.urlTextView.setText(result.getText());
+        startActivity(intent);
+        String codeType= result.getBarcodeFormat().toString();
         String textUrl = result.getText();
         String strDate = date;
-        createHistory(textUrl, strDate);
+        createHistory(textUrl, strDate,codeType);
     }
 
-    private void createHistory(String textUrl, String strDate) {
-        HistoryModel history = new HistoryModel(textUrl, strDate);
+    private void createHistory(String textUrl, String strDate, String codeType) {
+        HistoryModel history = new HistoryModel(textUrl, strDate,codeType);
         historyViewModel.insert(history);
-
     }
+
 
     @Override
     protected void onPause() {
