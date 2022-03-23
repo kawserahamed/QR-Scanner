@@ -1,6 +1,8 @@
 package org.prime.qrandbarcodescanner.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +39,10 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.historyV
         holder.url.setText(history.url);
         holder.date.setText(history.date);
 
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(holder.url.toString()));
+        context.startActivity(intent);
+
     }
 
     @Override
@@ -55,6 +61,4 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.historyV
 
         }
     }
-
-
 }

@@ -30,7 +30,7 @@ public class QRScanActivity extends AppCompatActivity implements ZXingScannerVie
     HistoryViewModel historyViewModel;
     Calendar calendar = Calendar.getInstance();
     SimpleDateFormat sdf = new SimpleDateFormat("dd-MMMM-yyyy");
-    String date = sdf.format(calendar.getTime()).toString();
+    String date = sdf.format(calendar.getTime());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
