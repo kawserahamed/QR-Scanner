@@ -1,4 +1,4 @@
-package org.primeit.qrandbarcodescanner.ui;
+package org.primeit.qrcodeandbarcodescanner.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,12 +14,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-import org.primeit.qrandbarcodescanner.R;
-import org.primeit.qrandbarcodescanner.adapter.HistoryAdapter;
-import org.primeit.qrandbarcodescanner.data.model.HistoryModel;
-import org.primeit.qrandbarcodescanner.databinding.ActivityMainBinding;
-import org.primeit.qrandbarcodescanner.listener.HistoryListeners;
-import org.primeit.qrandbarcodescanner.viewModel.HistoryViewModel;
+import org.primeit.qrcodeandbarcodescanner.R;
+import org.primeit.qrcodeandbarcodescanner.adapter.HistoryAdapter;
+import org.primeit.qrcodeandbarcodescanner.data.model.HistoryModel;
+import org.primeit.qrcodeandbarcodescanner.databinding.ActivityMainBinding;
+import org.primeit.qrcodeandbarcodescanner.listener.HistoryListeners;
+import org.primeit.qrcodeandbarcodescanner.viewModel.HistoryViewModel;
 
 public class MainActivity extends AppCompatActivity implements HistoryListeners {
     ActivityMainBinding binding;

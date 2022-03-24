@@ -1,14 +1,13 @@
-package org.primeit.qrandbarcodescanner.ui;
+package org.primeit.qrcodeandbarcodescanner.ui;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.primeit.qrandbarcodescanner.R;
-import org.primeit.qrandbarcodescanner.databinding.ActivityAboutBinding;
+import org.primeit.qrcodeandbarcodescanner.R;
+import org.primeit.qrcodeandbarcodescanner.databinding.ActivityAboutBinding;
 
 import java.util.Objects;
 

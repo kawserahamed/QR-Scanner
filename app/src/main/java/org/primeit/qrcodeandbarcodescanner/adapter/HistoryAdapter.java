@@ -1,4 +1,4 @@
-package org.primeit.qrandbarcodescanner.adapter;
+package org.primeit.qrcodeandbarcodescanner.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,10 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.primeit.qrandbarcodescanner.R;
-import org.primeit.qrandbarcodescanner.data.model.HistoryModel;
-import org.primeit.qrandbarcodescanner.listener.HistoryListeners;
-import org.primeit.qrandbarcodescanner.ui.ResultActivity;
+import org.primeit.qrcodeandbarcodescanner.R;
+import org.primeit.qrcodeandbarcodescanner.data.model.HistoryModel;
+import org.primeit.qrcodeandbarcodescanner.listener.HistoryListeners;
+import org.primeit.qrcodeandbarcodescanner.ui.ResultActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.List;

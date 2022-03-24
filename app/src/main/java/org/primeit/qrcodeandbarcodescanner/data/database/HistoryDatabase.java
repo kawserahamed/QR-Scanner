@@ -1,4 +1,4 @@
-package org.primeit.qrandbarcodescanner.data.database;
+package org.primeit.qrcodeandbarcodescanner.data.database;
 
 import android.content.Context;
 
@@ -6,7 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import org.primeit.qrandbarcodescanner.data.model.HistoryModel;
+import org.primeit.qrcodeandbarcodescanner.data.model.HistoryModel;
 
 @Database(entities = {HistoryModel.class}, version = 7, exportSchema = false)
 public abstract class HistoryDatabase extends RoomDatabase {

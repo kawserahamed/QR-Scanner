@@ -1,4 +1,4 @@
-package org.primeit.qrandbarcodescanner.ui;
+package org.primeit.qrcodeandbarcodescanner.ui;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -9,8 +9,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.primeit.qrandbarcodescanner.R;
-import org.primeit.qrandbarcodescanner.databinding.ActivityResultBinding;
+import org.primeit.qrcodeandbarcodescanner.R;
+import org.primeit.qrcodeandbarcodescanner.databinding.ActivityResultBinding;
 
 import java.util.Objects;
 

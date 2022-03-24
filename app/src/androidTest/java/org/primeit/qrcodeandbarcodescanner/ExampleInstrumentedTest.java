@@ -1,4 +1,4 @@
-package org.primeit.qrandbarcodescanner;
+package org.primeit.qrcodeandbarcodescanner;
 
 import android.content.Context;
 

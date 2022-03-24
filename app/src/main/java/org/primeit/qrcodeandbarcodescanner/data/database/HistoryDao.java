@@ -1,4 +1,4 @@
-package org.primeit.qrandbarcodescanner.data.database;
+package org.primeit.qrcodeandbarcodescanner.data.database;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -7,7 +7,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import org.primeit.qrandbarcodescanner.data.model.HistoryModel;
+import org.primeit.qrcodeandbarcodescanner.data.model.HistoryModel;
 
 import java.util.List;
 

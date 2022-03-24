@@ -1,12 +1,12 @@
-package org.primeit.qrandbarcodescanner.data.repository;
+package org.primeit.qrcodeandbarcodescanner.data.repository;
 
 import android.content.Context;
 
 import androidx.lifecycle.LiveData;
 
-import org.primeit.qrandbarcodescanner.data.database.HistoryDao;
-import org.primeit.qrandbarcodescanner.data.database.HistoryDatabase;
-import org.primeit.qrandbarcodescanner.data.model.HistoryModel;
+import org.primeit.qrcodeandbarcodescanner.data.database.HistoryDao;
+import org.primeit.qrcodeandbarcodescanner.data.database.HistoryDatabase;
+import org.primeit.qrcodeandbarcodescanner.data.model.HistoryModel;
 
 import java.util.List;
 

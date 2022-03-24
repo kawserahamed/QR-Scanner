@@ -1,4 +1,4 @@
-package org.primeit.qrandbarcodescanner.viewModel;
+package org.primeit.qrcodeandbarcodescanner.viewModel;
 
 import android.app.Application;
 
@@ -6,8 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import org.primeit.qrandbarcodescanner.data.model.HistoryModel;
-import org.primeit.qrandbarcodescanner.data.repository.HistoryRepository;
+import org.primeit.qrcodeandbarcodescanner.data.model.HistoryModel;
+import org.primeit.qrcodeandbarcodescanner.data.repository.HistoryRepository;
 
 import java.util.List;
 
