@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements HistoryListeners 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setTheme(R.style.Theme_QRAndBarcodeScanner);
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
