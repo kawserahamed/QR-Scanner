@@ -1,4 +1,4 @@
-package org.prime.qrandbarcodescanner.data.model;
+package org.primeit.qrandbarcodescanner.data.model;
 
 
 import androidx.room.ColumnInfo;

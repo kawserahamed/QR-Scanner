@@ -1,4 +1,4 @@
-package org.prime.qrandbarcodescanner;
+package org.primeit.qrandbarcodescanner;
 
 import org.junit.Test;
 

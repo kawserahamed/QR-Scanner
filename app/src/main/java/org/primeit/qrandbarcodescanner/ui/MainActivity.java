@@ -1,4 +1,4 @@
-package org.prime.qrandbarcodescanner.ui;
+package org.primeit.qrandbarcodescanner.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-import org.prime.qrandbarcodescanner.adapter.HistoryAdapter;
-import org.prime.qrandbarcodescanner.data.model.HistoryModel;
-import org.prime.qrandbarcodescanner.databinding.ActivityMainBinding;
-import org.prime.qrandbarcodescanner.listener.HistoryListeners;
-import org.prime.qrandbarcodescanner.viewModel.HistoryViewModel;
+import org.primeit.qrandbarcodescanner.adapter.HistoryAdapter;
+import org.primeit.qrandbarcodescanner.data.model.HistoryModel;
+import org.primeit.qrandbarcodescanner.databinding.ActivityMainBinding;
+import org.primeit.qrandbarcodescanner.listener.HistoryListeners;
+import org.primeit.qrandbarcodescanner.viewModel.HistoryViewModel;
 
 public class MainActivity extends AppCompatActivity implements HistoryListeners {
     ActivityMainBinding binding;

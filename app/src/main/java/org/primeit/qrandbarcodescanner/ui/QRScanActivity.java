@@ -1,4 +1,4 @@
-package org.prime.qrandbarcodescanner.ui;
+package org.primeit.qrandbarcodescanner.ui;
 
 import android.Manifest;
 import android.content.Intent;
@@ -15,8 +15,8 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
-import org.prime.qrandbarcodescanner.data.model.HistoryModel;
-import org.prime.qrandbarcodescanner.viewModel.HistoryViewModel;
+import org.primeit.qrandbarcodescanner.data.model.HistoryModel;
+import org.primeit.qrandbarcodescanner.viewModel.HistoryViewModel;
 
 import java.util.Calendar;
 
