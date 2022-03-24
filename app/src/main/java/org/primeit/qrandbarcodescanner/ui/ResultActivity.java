@@ -30,7 +30,7 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
-        Objects.requireNonNull(getSupportActionBar()).setTitle("Success");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("About");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         urlTextView = findViewById(R.id.textUrlView);

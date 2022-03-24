@@ -5,12 +5,15 @@
       <map>
         <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/drawable/button_background.xml" value="0.1305" />
         <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/drawable/url_background.xml" value="0.1305" />
+        <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/layout/activity_about.xml" value="0.25" />
         <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/layout/activity_bar.xml" value="0.209375" />
         <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/layout/activity_bar_scan.xml" value="0.209375" />
         <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/layout/activity_result.xml" value="0.209375" />
         <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/layout/activity_scanner.xml" value="0.209375" />
         <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/layout/activity_url.xml" value="0.22" />
         <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/layout/item_history.xml" value="0.2" />
+        <entry key="..\:/Users/PC Six/AndroidStudioProjects/QRandBarcodeScanner/app/src/main/res/menu/top_menu.xml" value="0.19907407407407407" />
         <entry key="..\:/Users/Techvalybd/AndroidStudioProjects/QR-Scanner/app/src/main/res/drawable/button_background.xml" value="0.163" />
         <entry key="..\:/Users/Techvalybd/AndroidStudioProjects/QR-Scanner/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Techvalybd/AndroidStudioProjects/QR-Scanner/app/src/main/res/layout/activity_result.xml" value="0.36666666666666664" />

@@ -2,14 +2,19 @@ package org.primeit.qrandbarcodescanner.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import org.primeit.qrandbarcodescanner.R;
 import org.primeit.qrandbarcodescanner.adapter.HistoryAdapter;
 import org.primeit.qrandbarcodescanner.data.model.HistoryModel;
 import org.primeit.qrandbarcodescanner.databinding.ActivityMainBinding;
@@ -33,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements HistoryListeners 
         historyViewModel = new ViewModelProvider(this).get(HistoryViewModel.class);
 
         historyViewModel.getAllHistory.observe(this, histories -> {
-            if (!histories.isEmpty()){
+            if (!histories.isEmpty()) {
                 binding.recyclerView.setVisibility(View.VISIBLE);
                 binding.emptyLayout.getRoot().setVisibility(View.GONE);
 
@@ -67,4 +72,22 @@ public class MainActivity extends AppCompatActivity implements HistoryListeners 
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.top_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.about:
+                Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
