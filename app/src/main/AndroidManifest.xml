@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QRAndBarcodeScanner">
         <activity
-            android:name=".ui.UrlActivity"
+            android:name=".ui.ResultActivity"
             android:exported="false" />
         <activity
             android:name=".ui.QRScanActivity"

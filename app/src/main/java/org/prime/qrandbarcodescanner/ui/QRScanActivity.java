@@ -18,9 +18,7 @@ import com.karumi.dexter.listener.single.PermissionListener;
 import org.prime.qrandbarcodescanner.data.model.HistoryModel;
 import org.prime.qrandbarcodescanner.viewModel.HistoryViewModel;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Locale;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
@@ -29,8 +27,6 @@ public class QRScanActivity extends AppCompatActivity implements ZXingScannerVie
     ZXingScannerView scannerView;
     HistoryViewModel historyViewModel;
     Calendar calendar = Calendar.getInstance();
-    SimpleDateFormat sdf = new SimpleDateFormat("dd-MMMM-yyyy", Locale.getDefault());
-    String date = sdf.format(calendar.getTime());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,16 +59,16 @@ public class QRScanActivity extends AppCompatActivity implements ZXingScannerVie
 
     @Override
     public void handleResult(Result result) {
-        Intent intent = new Intent(getApplicationContext(), UrlActivity.class);
-        intent.putExtra("url", result.getText());
-        startActivity(intent);
         String codeType = result.getBarcodeFormat().toString();
         String textUrl = result.getText();
-        String strDate = date;
-        createHistory(textUrl, strDate, codeType);
+        createHistory(textUrl, System.currentTimeMillis(), codeType);
+
+        Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+        intent.putExtra("result", result.getText());
+        startActivity(intent);
     }
 
-    private void createHistory(String textUrl, String strDate, String codeType) {
+    private void createHistory(String textUrl, Long strDate, String codeType) {
         HistoryModel history = new HistoryModel(textUrl, strDate, codeType);
         historyViewModel.insert(history);
     }

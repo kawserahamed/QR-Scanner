@@ -1,8 +1,8 @@
-package org.prime.qrandbarcodescanner.lesteners;
+package org.prime.qrandbarcodescanner.listener;
 
 import org.prime.qrandbarcodescanner.data.model.HistoryModel;
 
-public interface HistoryLesteners {
+public interface HistoryListeners {
 
     void onDeleteClicked(HistoryModel historyModel, int position);
 }

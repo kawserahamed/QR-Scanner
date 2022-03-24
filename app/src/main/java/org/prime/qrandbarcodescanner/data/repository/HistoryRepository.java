@@ -22,17 +22,17 @@ public class HistoryRepository {
     }
 
     public void insertHistory(HistoryModel history) {
-        historyDao.insertNotes(history);
+        historyDao.insertHistory(history);
 
     }
 
     public void deleteHistory(HistoryModel historyModel) {
-        historyDao.deleteNotes(historyModel);
+        historyDao.deleteHistory(historyModel);
 
     }
 
     public void updateHistory(HistoryModel history) {
-        historyDao.updateNotes(history);
+        historyDao.updateHistory(history);
 
     }
 

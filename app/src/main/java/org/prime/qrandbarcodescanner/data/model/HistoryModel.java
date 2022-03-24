@@ -5,33 +5,24 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "History_database")
+@Entity(tableName = "histories")
 public class HistoryModel {
-
 
     @PrimaryKey(autoGenerate = true)
     public int id;
 
-    @ColumnInfo(name = "history_url")
-    public String url;
+    @ColumnInfo(name = "data")
+    public String data;
 
-    @ColumnInfo(name = "history_date")
-    public String date;
+    @ColumnInfo(name = "createdAt")
+    public Long createdAt;
 
-    @ColumnInfo(name = "history_type")
+    @ColumnInfo(name = "type")
     public String type;
 
-    public HistoryModel(String url, String date, String type) {
-        this.url = url;
-        this.date = date;
-        this.type = type;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
+    public HistoryModel(String data, Long createdAt, String type) {
+        this.data = data;
+        this.createdAt = createdAt;
         this.type = type;
     }
 
@@ -43,19 +34,27 @@ public class HistoryModel {
         this.id = id;
     }
 
-    public String getUrl() {
-        return url;
+    public String getData() {
+        return data;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setData(String data) {
+        this.data = data;
     }
 
-    public String getDate() {
-        return date;
+    public Long getCreatedAt() {
+        return createdAt;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setCreatedAt(Long createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

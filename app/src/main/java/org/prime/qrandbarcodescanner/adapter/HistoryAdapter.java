@@ -1,6 +1,7 @@
 package org.prime.qrandbarcodescanner.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,19 +13,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.prime.qrandbarcodescanner.R;
 import org.prime.qrandbarcodescanner.data.model.HistoryModel;
-import org.prime.qrandbarcodescanner.lesteners.HistoryLesteners;
+import org.prime.qrandbarcodescanner.listener.HistoryListeners;
+import org.prime.qrandbarcodescanner.ui.ResultActivity;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.historyViewHolder> {
     Context context;
     List<HistoryModel> historyList;
-    HistoryLesteners historyLesteners;
+    HistoryListeners historyListeners;
 
-    public HistoryAdapter(Context context, List<HistoryModel> historyList, HistoryLesteners historyLesteners) {
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy, hh:mm a", Locale.getDefault());
+
+    public HistoryAdapter(Context context, List<HistoryModel> historyList, HistoryListeners historyListeners) {
         this.context = context;
         this.historyList = historyList;
-        this.historyLesteners = historyLesteners;
+        this.historyListeners = historyListeners;
     }
 
     public HistoryAdapter() {
@@ -40,16 +46,20 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.historyV
     @Override
     public void onBindViewHolder(@NonNull historyViewHolder holder, int position) {
         HistoryModel history = historyList.get(position);
-        holder.url.setText(history.url);
-        holder.date.setText(history.date);
+        holder.url.setText(history.data);
+        holder.date.setText(dateFormat.format(history.createdAt));
         if (history.type.equals("QR_CODE")) {
             holder.codeType.setImageResource(R.drawable.qrcode);
         } else {
             holder.codeType.setImageResource(R.drawable.barcode);
         }
 
-        holder.deleteButton.setOnClickListener(view -> historyLesteners
+        holder.deleteButton.setOnClickListener(view -> historyListeners
                 .onDeleteClicked(history, holder.getAdapterPosition()));
+
+        holder.itemView.setOnClickListener(view -> context.startActivity(new Intent(context, ResultActivity.class)
+                .putExtra("result", history.data)
+                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)));
     }
 
     @Override

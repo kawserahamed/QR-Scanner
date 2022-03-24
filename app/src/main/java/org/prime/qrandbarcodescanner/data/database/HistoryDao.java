@@ -13,16 +13,16 @@ import java.util.List;
 
 @Dao
 public interface HistoryDao {
-    @Query("SELECT * FROM History_database")
+    @Query("SELECT * FROM histories ORDER BY id desc")
     LiveData<List<HistoryModel>> getAllHistory();
 
     @Insert
-    void insertNotes(HistoryModel... history);
+    void insertHistory(HistoryModel... historyModel);
 
     @Delete
-    void deleteNotes(HistoryModel historyModel);
+    void deleteHistory(HistoryModel historyModel);
 
     @Update
-    void updateNotes(HistoryModel history);
+    void updateHistory(HistoryModel history);
 
 }

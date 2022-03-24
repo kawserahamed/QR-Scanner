@@ -9,6 +9,7 @@
     <string name="no">No</string>
     <string name="success">Success</string>
     <string name="copy">Copy</string>
+    <string name="your_scan_history_will_appear_here">Your scan history will appear here</string>
 
 
 </resources>

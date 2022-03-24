@@ -10,8 +10,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.prime.qrandbarcodescanner.R;
+import org.prime.qrandbarcodescanner.databinding.ActivityResultBinding;
 
-public class UrlActivity extends AppCompatActivity {
+import java.util.Objects;
+
+public class ResultActivity extends AppCompatActivity {
+
+    ActivityResultBinding binding;
 
     public TextView urlTextView;
     Button copyButton;
@@ -21,21 +26,32 @@ public class UrlActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_url);
+        binding = ActivityResultBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        setSupportActionBar(binding.toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Success");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         urlTextView = findViewById(R.id.textUrlView);
         copyButton = findViewById(R.id.copyButton);
-        clipboard = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
-        urlTextView.setText(getIntent().getStringExtra("url"));
+        clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+        urlTextView.setText(getIntent().getStringExtra("result"));
 
         copyButton.setOnClickListener(view -> {
             String text = urlTextView.getText().toString();
             myClip = ClipData.newPlainText("text", text);
             clipboard.setPrimaryClip(myClip);
-            Toast.makeText(getApplicationContext(), "URL Copied",
+            Toast.makeText(getApplicationContext(), "Copied",
                     Toast.LENGTH_SHORT).show();
 
         });
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }
