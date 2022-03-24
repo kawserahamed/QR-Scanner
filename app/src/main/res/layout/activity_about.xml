@@ -21,14 +21,13 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="@string/prime_scanner"
-        android:textColor="@color/black"
+        android:textColor="@color/ColorPrimary"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
 
     <TextView
         android:id="@+id/textView3"
@@ -42,11 +41,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
+        android:id="@+id/tv_privacy_policy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/privacy_policy"
         android:textColor="@color/ColorPrimary"
+        android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

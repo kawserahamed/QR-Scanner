@@ -14,6 +14,7 @@
     <string name="prime_Scanner_about">The Prime Scanner app is the fastest QR code scanner and bar code scanner. It is a must have scanner app for all Android devices. Prime Scanner is extremely easy to use. Simple QR Code Scanner Free app with built-in quick scan you want to scan by pointing to QR or barcode and QR scanner will start scanning automatically and QR scan will be done and results will be saved in this app automatically.</string>
     <string name="prime_scanner">Prime Scanner</string>
     <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacy_policy_link">https://sites.google.com/view/prime-it-qr-code-reader</string>
 
 
 </resources>
