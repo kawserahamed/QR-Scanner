@@ -10,9 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingEnd="16dp"
+        android:paddingVertical="10dp"
         android:paddingStart="10dp"
-        android:paddingVertical="10dp">
+        android:paddingEnd="16dp">
 
         <LinearLayout
             android:id="@+id/layout"
@@ -38,8 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="20dp"
-            android:text="@string/https_www_youtube_com"
             android:autoLink="all"
+            android:text="@string/https_www_youtube_com"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/layout"
